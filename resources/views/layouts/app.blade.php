@@ -32,6 +32,7 @@
     <link href="{{ asset('niceadmin/assets/css/style.css') }}" rel="stylesheet">
 
 
+
 </head>
 
 <body>
@@ -76,7 +77,7 @@
     <script src="{{ asset('niceadmin/assets/vendor/echarts/echarts.min.js') }}"></script>
     <script src="{{ asset('niceadmin/assets/vendor/quill/quill.min.js') }}"></script>
     <script src="{{ asset('niceadmin/assets/vendor/simple-datatables/simple-datatables.js') }}"></script>
-    <script src="{{ 'niceadmin/assets/vendor/tinymce/tinymce.min.js' }}"></script>
+    <script src="{{ asset('niceadmin/assets/vendor/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('niceadmin/assets/vendor/php-email-form/validate.j') }}s"></script>
 
     <!-- Template Main JS File -->
