@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -42,14 +41,14 @@ class AuthController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:unique:users',
             'password' => 'required|string|min:8|confirmed',
-            'role' => 'required|in:admin,pasien',
+            'type' => 'required|in:admin,pasien',
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => $request->role,
+            'type' => $request->type,
         ]);
 
         Auth::login($user);
