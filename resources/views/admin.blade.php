@@ -5,7 +5,7 @@ admin
     {{ __('Logout') }}
 </a>
 
-<a class="dropdown-item" href="{{ route('register') }}" onclick="event.preventDefault(); document.getElementById('register-form').submit();">
+<a class="dropdown-item" href="{{ route('register') }}">
     {{ __('Register') }}
 </a>
 
