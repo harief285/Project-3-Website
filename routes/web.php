@@ -16,14 +16,14 @@ use App\Http\Controllers\Auth\LoginController;
 |
 */
 
-<<<<<<< HEAD
 Route::get('/', function () {
     return view('dashboard');
 });
 
 Route::get('riwayat', function () {
     return view('riwayat.index');
-=======
+});
+    
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -32,7 +32,6 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::middleware(['auth', 'user-access:pasien'])->group(function () 
 {
     Route::get('/pasien/home', [HomeController::class, 'index'])->name('pasien');
->>>>>>> main
 });
 
 Route::middleware(['auth', 'user-access:admin'])->group(function () 
