@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use App\Models\User;
+
 
 class HomeController extends Controller
 {
@@ -29,11 +32,20 @@ class HomeController extends Controller
 
     public function adminHome(): View
     {
-        return view('admin');
+        $countuser = user::count();
+        $users = user::all();
+        return view('dashboard', compact('countuser', 'users'));
     }
 
     public function registerForm()
     {
         return view('auth.register');
+    }
+
+    public function riwayat()
+    {
+        $countuser = user::count();
+        $users = user::all();
+        return view('riwayat.index', compact('countuser', 'users'));
     }
 }
