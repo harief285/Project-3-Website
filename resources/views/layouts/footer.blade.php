@@ -26,4 +26,4 @@
 <script src="niceadmin/assets/vendor/php-email-form/validate.js"></script>
 
 <!-- Template Main JS File -->
-<script src="niceadmin/assets/js/main.js"></script>
+<script src="{{ asset('niceadmin/assets/js/main.js') }}"></script>

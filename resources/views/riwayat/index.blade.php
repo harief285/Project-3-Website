@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appdashboard')
 @section('Section', 'Riwayat')
 
 <title>@yield('title', 'riwayat')</title>
