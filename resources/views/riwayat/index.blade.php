@@ -11,7 +11,7 @@
             <h1>Riwayat Pasien</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin') }}">Home</a></li>
                     <li class="breadcrumb-item">Tables</li>
                     <li class="breadcrumb-item active">Riwayat</li>
                 </ol>
@@ -25,6 +25,12 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Default Table</h5>
+                            <div class="row">
+                                <div class="col text-end">
+                                    <button class="btn btn-primary btn-lg"><a href="#" class=""></a><i
+                                            class="bi bi-download bi-lg"></i></button>
+                                </div>
+                            </div>
 
                             <!-- Default Table -->
                             <table class="table">
