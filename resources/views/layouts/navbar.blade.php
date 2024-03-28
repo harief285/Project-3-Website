@@ -10,7 +10,8 @@
         <a href="{{ route('admin') }}" class="d-flex"><strong style="margin-right: 10px;color:black">Dashboard</strong></a>
         <a href="{{ route('riwayat') }}" class="align-item-center"><strong
                 style="margin-left: 25px; color:black">Riwayat</strong></a>
-        <a href="#" class="align-item-center"><strong style="margin-left: 25px;color:black">Akun</strong></a>
+        <a href="{{ route('akun') }}" class="align-item-center"><strong
+                style="margin-left: 25px;color:black">Akun</strong></a>
     </div><!-- End Logo -->
 
 

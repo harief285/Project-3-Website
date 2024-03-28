@@ -48,4 +48,13 @@ class HomeController extends Controller
         $users = user::all();
         return view('riwayat.index', compact('countuser', 'users'));
     }
+
+    public function profile()
+    {
+        $countuser = user::count();
+        $users = user::all();
+
+
+        return view('akun.index', compact('countuser', 'users'));
+    }
 }

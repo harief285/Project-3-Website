@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\AkunController;
 
 Route::get('/', function () {
     return view('dashboard');
@@ -28,5 +29,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/register', [RegisterController::class, 'showRegistrationForm'])->name('register.show');
     Route::post('/admin/register', [RegisterController::class, 'register'])->name('register');
     Route::get('/admin/riwayat', [HomeController::class, 'riwayat'])->name('riwayat');
+    Route::get('/admin/akun', [HomeController::class, 'profile'])->name('akun');
+    Route::put('/admin/update/{id}', [AkunController::class, 'updateprofile'])->name('akun.update');
+    Route::put('/admin/update/password/{id}', [AkunController::class, 'updatepassword'])->name('akun.password');
 });
-
