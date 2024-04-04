@@ -1,7 +1,7 @@
 @extends('layouts.appdashboard')
 @section('Section', 'Riwayat')
 
-<title>@yield('title', 'riwayat')</title>
+<title>@yield('title', 'Deteksi Wajah | Riwayat')</title>
 
 @section('content')
 
@@ -24,61 +24,42 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Default Table</h5>
+                            <h5 class="card-title">Riwayat</h5>
                             <div class="row">
                                 <div class="col text-end">
-                                    <button class="btn btn-primary btn-lg"><a href="#" class=""></a><i
-                                            class="bi bi-download bi-lg"></i></button>
+                                    <a href="{{ route('export-excel') }}" class="btn btn-primary btn-lg">
+                                        <i class="bi bi-download bi-lg"></i>
+                                    </a>
                                 </div>
                             </div>
+
 
                             <!-- Default Table -->
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
+                                        <th scope="col">No</th>
                                         <th scope="col">Name</th>
-                                        <th scope="col">Position</th>
-                                        <th scope="col">Age</th>
-                                        <th scope="col">Start Date</th>
+                                        <th scope="col">Tekanan Darah</th>
+                                        <th scope="col">Kolesterol</th>
+                                        <th scope="col">Prediksi</th>
+                                        <th scope="col">Presentase</th>
+                                        <th scope="col">Gambar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Brandon Jacob</td>
-                                        <td>Designer</td>
-                                        <td>28</td>
-                                        <td>2016-05-25</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Bridie Kessler</td>
-                                        <td>Developer</td>
-                                        <td>35</td>
-                                        <td>2014-12-05</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Ashleigh Langosh</td>
-                                        <td>Finance</td>
-                                        <td>45</td>
-                                        <td>2011-08-12</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">4</th>
-                                        <td>Angus Grady</td>
-                                        <td>HR</td>
-                                        <td>34</td>
-                                        <td>2012-06-11</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">5</th>
-                                        <td>Raheem Lehner</td>
-                                        <td>Dynamic Division Officer</td>
-                                        <td>47</td>
-                                        <td>2011-04-19</td>
-                                    </tr>
+                                    @foreach ($deteksis as $deteksi)
+                                        <tr>
+                                            <th scope="row">{{ $loop->iteration }}</th>
+                                            <td>{{ $deteksi->user->name }}</td>
+                                            <td>{{ $deteksi->tekanandarah }}</td>
+                                            <td>{{ $deteksi->kolesterol }}</td>
+                                            <td>{{ $deteksi->prediksi }}</td>
+                                            <td>{{ $deteksi->presentase }}</td>
+                                            <td><img src="{{ asset('storage/' . $deteksi->gambar) }}"
+                                                    alt="{{ $deteksi->name }}" width="100"></td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                             <!-- End Default Table Example -->

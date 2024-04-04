@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\AkunController;
+use App\Http\Controllers\Excel\ExcelController;
 
 Route::get('/', function () {
     return view('dashboard');
@@ -32,4 +33,5 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/akun', [HomeController::class, 'profile'])->name('akun');
     Route::put('/admin/update/{id}', [AkunController::class, 'updateprofile'])->name('akun.update');
     Route::put('/admin/update/password/{id}', [AkunController::class, 'updatepassword'])->name('akun.password');
+    Route::get('/export-excel', [ExcelController::class, 'downloadRiwayat'])->name('export-excel');
 });

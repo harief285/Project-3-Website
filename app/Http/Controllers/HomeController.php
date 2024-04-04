@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Deteksi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -46,7 +47,8 @@ class HomeController extends Controller
     {
         $countuser = user::count();
         $users = user::all();
-        return view('riwayat.index', compact('countuser', 'users'));
+        $deteksis = Deteksi::all();
+        return view('riwayat.index', compact('countuser', 'users', 'deteksis'));
     }
 
     public function profile()
