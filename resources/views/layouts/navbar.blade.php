@@ -12,6 +12,8 @@
                 style="margin-left: 25px; color:black">Riwayat</strong></a>
         <a href="{{ route('akun') }}" class="align-item-center"><strong
                 style="margin-left: 25px;color:black">Akun</strong></a>
+        <a href="{{ route('artikel.index') }}" class="align-item-center"><strong
+                style="margin-left: 25px;color:black">Artikel</strong></a>
     </div><!-- End Logo -->
 
 

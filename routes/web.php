@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\AkunController;
 use App\Http\Controllers\Excel\ExcelController;
+use App\Http\Controllers\ArtikelController;
 
 Route::get('/', function () {
     return view('dashboard');
@@ -34,4 +35,12 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::put('/admin/update/{id}', [AkunController::class, 'updateprofile'])->name('akun.update');
     Route::put('/admin/update/password/{id}', [AkunController::class, 'updatepassword'])->name('akun.password');
     Route::get('/export-excel', [ExcelController::class, 'downloadRiwayat'])->name('export-excel');
+
+    Route::get('/admin/artikel/index', [ArtikelController::class, 'index'])->name('artikel.index');
+    Route::get('/admin/artikel/create', [ArtikelController::class, 'create'])->name('buat.artikel');
+    Route::post('/admin/artikel/store', [ArtikelController::class, 'store'])->name('artikel.store');
+    Route::get('/admin/artikel/show/{id}', [ArtikelController::class, 'show'])->name('artikel.show');
+    Route::get('/admin/artikel/edit/{id}', [ArtikelController::class, 'edit'])->name('artikel.edit');
+    Route::put('/admin/artikel/update/{id}', [ArtikelController::class, 'update'])->name('artikel.update');
+    Route::delete('admin/artikel/delete/{id}', [ArtikelController::class, 'destroy'])->name('artikel.delete');
 });
